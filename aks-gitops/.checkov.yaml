@@ -1,0 +1,6 @@
+checks:
+  - CKV_AZURE_1
+  - CKV_AZURE_8
+skip_checks:
+  - CKV_AZURE_2
+  - CKV_AZURE_6

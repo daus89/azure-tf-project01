@@ -1,0 +1,13 @@
+metadata:
+  name: "Azure Resource Tag Policy"
+  category: "custom"
+scope:
+  provider: azure
+definition:
+  cond_type: attribute
+  resource_types:
+    - azurerm_resource_group
+    - azurerm_virtual_machine
+  attribute: tags.environment
+  operator: exists
+  error_message: "Missing required tag: 'environment'"
