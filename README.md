@@ -43,9 +43,9 @@ Provision a production-ready AKS cluster with GitOps, security checks, and CI/CD
 ## 📦 Repository Structure
 ```
 hcp-terraform-azure-projects/
-├── beginner-vm-provisioning/     # Basic Ubuntu VM
-├── intermediate-3tier-app/       # Modular 3-tier app
-├── expert-aks-gitops/            # AKS, GitOps, security policies
+├── linux-vm-provisioning/     # Basic Ubuntu VM
+├── three-tier-app/       # Modular 3-tier app
+├── aks-gitops/            # AKS, GitOps, security policies
 │   ├── .tflint.hcl               # TFLint ruleset
 │   ├── .checkov.yaml             # Checkov checks
 │   └── policy-examples/          # YAML-based tag policy
@@ -57,7 +57,7 @@ hcp-terraform-azure-projects/
 
 ## ✅ Run Example Project
 ```bash
-cd beginner-vm-provisioning
+cd linux-vm-provisioning
 terraform init
 terraform plan
 terraform apply
@@ -71,7 +71,7 @@ Use `tflint` and `checkov` for free-tier policy validation.
 ### TFLint
 ```bash
 brew install tflint
-cd expert-aks-gitops
+cd aks-gitops
 tflint --init
 tflint
 ```
