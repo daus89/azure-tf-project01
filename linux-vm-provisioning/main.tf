@@ -60,7 +60,7 @@ resource "azurerm_network_interface" "nic1" {
 
   ip_configuration {
     name                          = "ipconfig1"
-    subnet_id                     = azurerm_virtual_network.vnet1.subnet[0].id
+    subnet_id                     = azurerm_virtual_network.vnet1.subnet.id
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -71,7 +71,7 @@ resource "azurerm_linux_virtual_machine" "vm1" {
   resource_group_name   = azurerm_resource_group.rg1.name
   size                  = "Standard_F2"
   admin_username        = "adminuser"
-  network_interface_ids = [azurerm_network_interface.nic1.nice1.id]
+  network_interface_ids = [azurerm_network_interface.nic1.id]
   admin_ssh_key {
     username   = "adminuser"
     public_key = tls_private_key.linux_ssh_key.public_key_openssh
