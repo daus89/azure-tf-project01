@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "azurerm" {
-  features {
+  features { 
   }
 }
 
@@ -77,7 +77,7 @@ resource "azurerm_linux_virtual_machine" "vm1" {
   name                  = "vm1"
   location              = azurerm_resource_group.rg1.location
   resource_group_name   = azurerm_resource_group.rg1.name
-  size                  = "Standard_F2"
+  size                  = "Standard_B2s"
   admin_username        = "adminuser"
   network_interface_ids = [azurerm_network_interface.nic1.id]
   admin_ssh_key {
