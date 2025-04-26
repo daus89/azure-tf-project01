@@ -87,3 +87,4 @@ YAML policy file: `policy-examples/checkov-tag-policy.yaml`
 # Result
 Linux VM provisioning
 
+<img width="1142" alt="Screenshot 2025-04-27 at 12 40 23 AM" src="https://github.com/user-attachments/assets/0b065b42-007e-4c76-ae80-7f7cde908dc4" />
