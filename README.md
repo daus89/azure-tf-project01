@@ -83,3 +83,7 @@ checkov -d .
 ```
 
 YAML policy file: `policy-examples/checkov-tag-policy.yaml`
+
+# Result
+Linux VM provisioning
+
