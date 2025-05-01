@@ -1,4 +1,4 @@
-resource "azurerm_virtual_network" "vnet1" {
+resource "azurerm_virtual_network" "vnet" {
     name = var.vnet1
     address_space = var.address_space
     location = var.location
@@ -6,15 +6,16 @@ resource "azurerm_virtual_network" "vnet1" {
   
 }
 
-resource "azurerm_subnet" "subnet1" {
-    name = var.subnet_name
+resource "azurerm_subnet" "subnet" {
+    for_each = zipmap(var.subnet_names, var.address_prefixes)
+    name = each.key
+    address_prefixes = [each.value]
     resource_group_name = var.resource_group_name
     virtual_network_name = azurerm_virtual_network.vnet1.name
-    address_prefixes = var.address_prefixes
   
 }
 
-resource "azurerm_network_security_group" "sg1" {
+resource "azurerm_network_security_group" "nsg" {
   name = var.nsg_name
   location = var.location
   resource_group_name = var.resource_group_name
