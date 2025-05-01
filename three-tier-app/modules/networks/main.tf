@@ -1,12 +1,12 @@
 resource "azurerm_virtual_network" "vnet" {
-    name = var.vnet1
+    name = var.vnet_name
     address_space = var.address_space
     location = var.location
     resource_group_name = var.resource_group_name
   
 }
 
-resource "azurerm_subnet" "subnet" {
+resource "azurerm_subnet" "subnets" {
     for_each = zipmap(var.subnet_names, var.address_prefixes)
     name = each.key
     address_prefixes = [each.value]
