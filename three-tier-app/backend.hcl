@@ -1,4 +1,4 @@
-hostname     = "app.terraform.io"
+# This file is used to configure the backend for the Terraform project.
 organization = "hafiy-org"
 
 workspaces {
